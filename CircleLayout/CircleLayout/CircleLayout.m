@@ -1,11 +1,9 @@
-
 #import "CircleLayout.h"
 
 #define ITEM_SIZE 70
 
 @interface CircleLayout()
 
-// arrays to keep track of insert, delete index paths
 // 用来保存插入和删除的cell的indexPath值的数组
 @property (nonatomic, strong) NSMutableArray *deleteIndexPaths;
 @property (nonatomic, strong) NSMutableArray *insertIndexPaths;
