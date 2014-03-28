@@ -22,7 +22,10 @@
     _center = CGPointMake(size.width / 2.0, size.height / 2.0);
     _radius = MIN(size.width, size.height) / 2.5;
     
-    //其实对于一个size不变的collectionView来说，除了_cellCount之外的中心和半径的定义也可以扔到init里去做，但是显然在prepareLayout里做的话具有更大的灵活性。因为每次重新给出layout时都会调用prepareLayout，这样在以后如果有collectionView大小变化的需求时也可以自动适应变化。
+    //其实对于一个size不变的collectionView来说，除了_cellCount之外的
+    //中心和半径的定义也可以扔到init里去做，但是显然在prepareLayout
+    //里做的话具有更大的灵活性。因为每次重新给出layout时都会调用prepareLayout
+    //，这样在以后如果有collectionView大小变化的需求时也可以自动适应变化。
 }
 
 
