@@ -82,6 +82,19 @@ enum PhotoOrientation{
     return YES;
 }
 
+
+// 返回CollectionView的辅助视图，本例中是hedaer和footer
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath{
+    static NSString *headerIdentifier = @"CollectionViewHeader";
+    static NSString *footerIdentifier = @"CollectionViewFooter";
+    return [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                              withReuseIdentifier:kind==UICollectionElementKindSectionHeader?
+                                                 headerIdentifier:footerIdentifier
+                                                     forIndexPath:indexPath];
+}
+
 // 返回的 Cell 必须通过调用 -dequeueReusableCellWithReuseIdentifier:forIndexPath
 // 这个方法来获取
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
